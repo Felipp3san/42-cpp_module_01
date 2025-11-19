@@ -1,6 +1,6 @@
-# 42-cpp_module_01
+# CPP Module 01
 
-This repository will contain solutions for **CPP Module 01**, the second in the C++ module series at 42 School.
+This repository contain solutions for **CPP Module 01**, the second in the C++ module series at 42 School.
 
 You’ll find practice tasks that focus on:
 
