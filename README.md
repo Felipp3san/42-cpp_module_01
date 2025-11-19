@@ -1,4 +1,4 @@
-# 42-cpp_module_01
+# CPP Module 01
 
 This repository contains solutions for **CPP Module 01** as part of the 42 School C++ modules.
 
