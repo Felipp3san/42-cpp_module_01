@@ -1,26 +1,27 @@
-# CPP Module 01
+# 42-cpp_module_01
 
-This repository contain solutions for **CPP Module 01**, the second in the C++ module series at 42 School.
+This repository contains solutions for **CPP Module 01** as part of the 42 School C++ modules.
 
-You’ll find practice tasks that focus on:
+These intermediate exercises build on the foundations of C++ begun in Module 00:
 
 - Operator overloading
 - File input and output
 - Advanced class usage
-- Continued exploration of C++ syntax and OOP features
+- Further object-oriented programming (OOP) practice
 
-> *Part of the 42 cursus to strengthen your C++ programming foundations.*
+> *This project is part of the 42 cursus, focused on progressing your C++ skills.*
 
 ---
 
 ## How to use
 
-After initializing the repository, add your code and documentation to each exercise subfolder.
+Clone the repository and follow the instructions in each exercise folder.
 
 ---
 
 ## Reference
 
 - [42 Network](https://42.fr/en/homepage/)
-- [C++ Documentation](https://en.cppreference.com/w/)
+- [C++ Documentation](https://en.cppreference.com/w/) 
+
 ---
