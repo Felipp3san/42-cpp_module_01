@@ -22,5 +22,5 @@ After initializing the repository, add your code and documentation to each exerc
 ## Reference
 
 - [42 Network](https://42.fr/en/homepage/)
-- [C++ Documentation](https://en.cppreference.com/w/)\n
+- [C++ Documentation](https://en.cppreference.com/w/)
 ---
