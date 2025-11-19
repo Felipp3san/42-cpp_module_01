@@ -1,0 +1,6 @@
+Hello, this is a test file, i'll put another test word there just for debugging.
+It contains several lines of text.
+You can use it to verify your C++ function.
+Line 4: Numbers 12345
+Line 5: Symbols !@#$%
+End of file.
