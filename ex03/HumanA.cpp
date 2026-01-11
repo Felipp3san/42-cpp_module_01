@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
+#include "Weapon.hpp"
 #include <iostream>
 
-HumanA::HumanA(const std::string &name, Weapon &weapon) :
-	_name(name),
-	_weapon(weapon)
-{};
+HumanA::HumanA(const std::string& name, Weapon& weapon)
+    : _name(name)
+    , _weapon(weapon) {};
 
-HumanA::~HumanA(void)
+HumanA::~HumanA()
 {
-	std::cout << "Human " << _name << " killed." << std::endl;
+    std::cout << "Human " << _name << " killed." << '\n';
 }
 
-void	HumanA::attack(void)
+void HumanA::attack()
 {
-	std::cout << _name << " attacks with their "
-			  << _weapon.getType() << std::endl;
+    std::cout << _name << " attacks with their " << _weapon.getType() << '\n';
 }

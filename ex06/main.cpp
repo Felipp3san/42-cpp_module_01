@@ -10,59 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Harl.hpp"
+#include <iostream>
 
-int	getLevelIndex(const std::string &level)
+int getLevelIndex(const std::string& level)
 {
-	std::string levels[] = {
-		"DEBUG",
-		"INFO",
-		"WARNING",
-		"ERROR"
-	};
+    std::string levels[] = {
+        "DEBUG",
+        "INFO",
+        "WARNING",
+        "ERROR",
+    };
 
-	for (size_t i = 0; i < sizeof(levels) / sizeof(std::string); i++)
-	{
-		if (level == levels[i])
-			return (i);
-	}
-	return (-1);
+    for (size_t i = 0; i < sizeof(levels) / sizeof(std::string); i++)
+    {
+        if (level == levels[i])
+            return (i);
+    }
+    return (-1);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-	if (argc != 2)
-	{
-		std::cout << "Usage: ./harlFilter <message>" << std::endl;
-		return (1);
-	}
+    if (argc != 2)
+    {
+        std::cout << "Usage: ./harlFilter <message>\n";
+        return (1);
+    }
 
-	std::string	level = argv[1];
-	Harl		harl;
+    std::string level = argv[1];
+    Harl harl;
 
-	switch (getLevelIndex(level))
-	{
-		case 0:
-			std::cout << "[ DEBUG ]" << std::endl;
-			harl.complain("DEBUG");
-			__attribute__ ((fallthrough));
-		case 1:
-			std::cout << "[ INFO ]" << std::endl;
-			harl.complain("INFO");
-			__attribute__ ((fallthrough));
-		case 2:
-			std::cout << "[ WARNING ]" << std::endl;
-			harl.complain("WARNING");
-			__attribute__ ((fallthrough));
-		case 3:
-			std::cout << "[ ERROR ]" << std::endl;
-			harl.complain("ERROR");
-			break ;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break ;
-	};
+    switch (getLevelIndex(level))
+    {
+    case 0:
+        std::cout << "[ DEBUG ]\n";
+        harl.complain("DEBUG");
+        __attribute__((fallthrough));
+    case 1:
+        std::cout << "[ INFO ]\n";
+        harl.complain("INFO");
+        __attribute__((fallthrough));
+    case 2:
+        std::cout << "[ WARNING ]\n";
+        harl.complain("WARNING");
+        __attribute__((fallthrough));
+    case 3:
+        std::cout << "[ ERROR ]\n";
+        harl.complain("ERROR");
+        break;
+    default:
+        std::cout << "[ Probably complaining about insignificant problems ]\n";
+        break;
+    };
 
-	return (0);
+    return (0);
 }

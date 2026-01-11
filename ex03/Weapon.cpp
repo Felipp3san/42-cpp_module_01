@@ -10,24 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Weapon.hpp"
+#include <iostream>
 
-Weapon::Weapon(const std::string &type) :
-	_type(type)
-{};
+Weapon::Weapon(const std::string& type)
+    : _type(type) {};
 
-Weapon::~Weapon(void)
+Weapon::~Weapon()
 {
-	std::cout << "Weapon " << _type << " destroyed." << std::endl;
+    std::cout << "Weapon " << _type << " destroyed.\n";
 }
 
-void Weapon::setType(const std::string &type)
+void Weapon::setType(const std::string& type)
 {
-	_type = type;
+    _type = type;
 }
 
-const std::string &Weapon::getType(void)
+const std::string& Weapon::getType()
 {
-	return (_type);
+    return (_type);
 }

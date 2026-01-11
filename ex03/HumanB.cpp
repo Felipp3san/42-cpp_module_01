@@ -10,30 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 #include <iostream>
 
-HumanB::HumanB(const std::string &name) :
-	_name(name),
-	_weapon(NULL)
-{};
+HumanB::HumanB(const std::string& name)
+    : _name(name)
+    , _weapon(NULL) {};
 
-HumanB::~HumanB(void)
+HumanB::~HumanB()
 {
-	std::cout << "Human " << _name << " killed." << std::endl;
+    std::cout << "Human " << _name << " killed.\n";
 }
 
-void	HumanB::attack(void)
+void HumanB::attack()
 {
-	if (_weapon != NULL)
-		std::cout << _name << " attacks with their " 
-				  << _weapon->getType() << std::endl;
-	else
-		std::cout << _name << " has no weapon." << std::endl;
+    if (_weapon != NULL)
+    {
+        std::cout << _name << " attacks with their " << _weapon->getType() << '\n';
+    }
+    else
+    {
+        std::cout << _name << " has no weapon." << '\n';
+    }
 }
 
-void	HumanB::setWeapon(Weapon &weapon)
+void HumanB::setWeapon(Weapon& weapon)
 {
-	_weapon = &weapon;
+    _weapon = &weapon;
 }

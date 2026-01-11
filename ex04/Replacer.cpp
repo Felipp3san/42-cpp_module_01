@@ -11,68 +11,68 @@
 /* ************************************************************************** */
 
 #include "Replacer.hpp"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
 
-Replacer::Replacer(const std::string &filename, const std::string &s1, const std::string &s2) :
-	_filename(filename),
-	_s1(s1),
-	_s2(s2)
-{};
+Replacer::Replacer(const std::string& filename, const std::string& s1, const std::string& s2)
+    : _filename(filename)
+    , _s1(s1)
+    , _s2(s2) {};
 
-Replacer::~Replacer(void)
-{}
-
-std::string	Replacer::replace(const std::string &line) const
+Replacer::~Replacer()
 {
-	std::string	result;
-	size_t		i;
-	size_t		found;
-
-	i = 0;
-	while (i < line.length())
-	{
-		found = line.find(_s1, i);
-		if (found != std::string::npos)
-		{
-			result += line.substr(i, found - i);
-			result += _s2;
-			i = found + _s1.length();
-		}
-		else
-		{
-			result += line.substr(i);
-			i = line.length();
-		}
-	}
-	return (result);
 }
 
-bool	Replacer::process(void)
+std::string Replacer::replace(const std::string& line) const
 {
-	std::string		line;
+    std::string result;
+    size_t found = 0;
+    size_t i     = 0;
 
-	std::ifstream	in(_filename.c_str());
-	if (!in)
-	{
-		std::cout << "Error: Could not open input file." << std::endl;
-		return (false);
-	}
+    i = 0;
+    while (i < line.length())
+    {
+        found = line.find(_s1, i);
+        if (found != std::string::npos)
+        {
+            result += line.substr(i, found - i);
+            result += _s2;
+            i = found + _s1.length();
+        }
+        else
+        {
+            result += line.substr(i);
+            i = line.length();
+        }
+    }
+    return (result);
+}
 
-	std::ofstream	out((_filename + ".replace").c_str());
-	if (!out)
-	{
-		in.close();
-		std::cout << "Error: Could not create output file." << std::endl;
-		return (false);
-	}
+bool Replacer::process(void)
+{
+    std::string line;
+    std::ifstream input(_filename.c_str());
 
-	while (getline(in, line))
-	{
-		out << replace(line) << std::endl;
-	}
-	in.close();
-	out.close();
-	return (true);
+    if (!input)
+    {
+        std::cout << "Error: Could not open input file.\n";
+        return (false);
+    }
+
+    std::ofstream out((_filename + ".replace").c_str());
+    if (!out)
+    {
+        input.close();
+        std::cout << "Error: Could not create output file.\n";
+        return (false);
+    }
+
+    while (getline(input, line))
+    {
+        out << replace(line) << '\n';
+    }
+    input.close();
+    out.close();
+    return (true);
 }

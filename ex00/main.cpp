@@ -12,14 +12,14 @@
 
 #include "Zombie.hpp"
 
-int	main(void)
+int main()
 {
-	Zombie *zombie1;
+    Zombie* zombie1;
 
-	zombie1 = newZombie("Daryl Dixon");
-	zombie1->announce();
-	delete zombie1;
+    zombie1 = newZombie("Daryl Dixon");
+    zombie1->announce();
+    delete zombie1;
 
-	randomChump("Rick Grimes");
-	return (0);
+    randomChump("Rick Grimes");
+    return (0);
 }

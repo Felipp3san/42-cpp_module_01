@@ -10,24 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(void) : _name("Unknown"){};
+Zombie::Zombie()
+    : _name("Unknown") {};
 
-Zombie::Zombie(std::string name) : _name(name){};
+Zombie::Zombie(std::string name)
+    : _name(name) {};
 
-Zombie::~Zombie(void){
-	std::cout << "Zombie " << _name << " Killed. (Wasn't it dead already?)"
-		<< std::endl;
+Zombie::~Zombie()
+{
+    std::cout << "Zombie " << _name << " Killed. (Wasn't it dead already?)\n";
 };
 
-void	Zombie::announce(void)
+void Zombie::announce()
 {
-	std::cout << _name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << _name << ": " << "BraiiiiiiinnnzzzZ...\n";
 }
 
-void	Zombie::setName(const std::string &name)
+void Zombie::setName(const std::string& name)
 {
-	_name = name;
+    _name = name;
 }

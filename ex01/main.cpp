@@ -12,16 +12,19 @@
 
 #include "Zombie.hpp"
 
-int	main(void)
+int main()
 {
-	const int	maxZombies = 10;
-	Zombie		*zombies;
+    const int maxZombies = 10;
+    Zombie* zombies      = NULL;
 
-	zombies = zombieHorde(maxZombies, "All as one");
+    zombies = zombieHorde(maxZombies, "All as one");
 
-	for (int i = 0; i < maxZombies; i++)
-		zombies[i].announce();
+    for (int i = 0; i < maxZombies; i++)
+    {
+        zombies[i].announce();
+    }
 
-	delete[] zombies;
-	return (0);
+    delete[] zombies;
+
+    return (0);
 }
